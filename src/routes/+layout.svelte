@@ -2,31 +2,16 @@
     import '../app.css';
     import Header from '$lib/components/Header.svelte';
     import Footer from '$lib/components/Footer.svelte';
+
+    let { children } = $props();
 </script>
 
-<div class="app">
+<div class="flex flex-col min-h-screen">
     <Header />
 
-    <main>
-        <slot />
+    <main class="flex-1">
+        {@render children()}
     </main>
 
     <Footer />
 </div>
-
-<style>
-    .app {
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-        width: 100%;
-        max-width: 1280px;
-        margin: 0 auto;
-        padding: 0 var(--spacing-md);
-    }
-
-    main {
-        flex: 1;
-        padding-top: var(--spacing-xl);
-    }
-</style>
