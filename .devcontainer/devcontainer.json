@@ -1,0 +1,16 @@
+{
+	"name": "SvelteKit Dev",
+	"image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
+	"customizations": {
+		"vscode": {
+			"settings": {},
+			"extensions": [
+				"svelte.svelte-vscode",
+				"esbenp.prettier-vscode",
+				"dbaeumer.vscode-eslint"
+			]
+		}
+	},
+	"forwardPorts": [5173],
+	"postCreateCommand": "npm install"
+}
