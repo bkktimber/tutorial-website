@@ -1,0 +1,15 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "5173:5173"
+    volumes:
+      - .:/app                        # bind-mount source
+      - /app/node_modules             # anonymous volume shadows host node_modules
+    environment:
+      - NODE_ENV=development
+    env_file:
+      - .env
+    command: npm run dev -- --host 0.0.0.0

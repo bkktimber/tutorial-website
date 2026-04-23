@@ -1,50 +1,28 @@
 <script>
     const year = new Date().getFullYear();
+
+    const socialLinks = [
+        { label: 'GitHub', href: 'https://github.com' },
+        { label: 'LinkedIn', href: 'https://linkedin.com' }
+    ];
 </script>
 
-<footer>
-    <div class="container">
-        <p>&copy; {year} My Personal Site. All rights reserved.</p>
-        <div class="socials">
-            <a href="https://github.com" target="_blank" rel="noreferrer">GitHub</a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a href="https://twitter.com" target="_blank" rel="noreferrer">Twitter</a>
+<footer class="mt-auto border-t border-[var(--color-border)]">
+    <div class="max-w-5xl mx-auto px-6 py-12 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-[var(--color-text-secondary)]">
+            &copy; {year} Mai. All rights reserved.
+        </p>
+        <div class="flex items-center gap-6">
+            {#each socialLinks as link}
+                <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    class="text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] transition-colors duration-200"
+                >
+                    {link.label}
+                </a>
+            {/each}
         </div>
     </div>
 </footer>
-
-<style>
-    footer {
-        margin-top: var(--spacing-xl);
-        padding: var(--spacing-xl) 0;
-        border-top: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        max-width: 1280px;
-        margin: 0 auto;
-        padding: 0 var(--spacing-md);
-    }
-
-    p {
-        color: var(--color-text-secondary);
-        font-size: 0.9rem;
-    }
-
-    .socials {
-        display: flex;
-        gap: var(--spacing-md);
-    }
-    
-    .socials a {
-        color: var(--color-text-secondary);
-        font-size: 0.9rem;
-    }
-
-    .socials a:hover {
-        color: var(--color-text-primary);
-    }
-</style>

@@ -1,0 +1,6 @@
+FROM node:22-alpine
+WORKDIR /app
+# deps installed at container start via entrypoint, not image build,
+# so package.json changes don't require a full image rebuild
+COPY package*.json ./
+RUN npm ci
