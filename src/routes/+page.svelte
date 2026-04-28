@@ -64,12 +64,12 @@
             <article class="group p-6 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] hover:border-[var(--color-accent)]/30 hover:shadow-lg hover:shadow-[var(--color-accent)]/5 transition-all duration-300">
                 <div class="flex flex-wrap gap-2 mb-4">
                     {#each project.disciplines as tag}
-                        <span class="text-xs font-medium tracking-wide uppercase px-2.5 py-1 rounded-full bg-[var(--color-accent-light)] text-[var(--color-accent)]">
+                        <span class="text-xs font-medium tracking-wide uppercase px-2.5 py-1 rounded-full bg-[var(--color-accent)] text-white">
                             {tag}
                         </span>
                     {/each}
                 </div>
-                <h3 class="font-heading text-xl group-hover:text-[var(--color-accent)] transition-colors duration-200">
+                <h3 class="font-heading text-xl text-[var(--color-bg)] group-hover:text-[var(--color-accent)] transition-colors duration-200">
                     {project.title}
                 </h3>
                 <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mt-2">
